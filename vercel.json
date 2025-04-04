@@ -10,6 +10,11 @@
         "destination": "/second.html"
     
       },
+           {
+        "source": "/spansf1",
+        "destination": "/span.html"
+    
+      },
       {
         "source": "/engchat1",
         "destination": "/engchat1.html"
