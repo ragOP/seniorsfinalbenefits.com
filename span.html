@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-toastify/8.2.0/ReactToastify.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src=//b-js.ringba.com/CAfdb7eb5bdaa24fb8a155f293ece397ae async></script>
+<script src=//b-js.ringba.com/CA576870050c5a4ba0a633cd20698a0f4b async></script>
 
   
         <!-- Google Tag Manager -->
@@ -151,15 +151,15 @@ border-radius: 0px 0px 10px 10px;
 
       
         <div class="checking hidden" id="congratulations">
-            <div class="congrats">Congratulations, You Qualify 🎉 </div>
+            <div class="congrats">Felicidades, Calificas 🎉 </div>
             <div class="top-description-5" >
-                Make A <b>Quick Call</b> To Claim Your <b>$40,000</b> Burial Protection Plan Now!
+                ¡Haz Una Llamada Rápida Para Reclamar Tu Plan De Protección Funeraria De $40,000 Ahora!
             </div>
-            <div class="spots-count">Spots remaining: 4</div>
+            <div class="spots-count">Lugares disponibles: 4</div>
             <!-- <div class="tap-direction">👇 TAP BELOW TO CALL 👇</div> -->
             <div class="call-btn" onclick="handleCall()">
-                <a href="tel:+13214858035">
-                    <div className="call-btn" onClick={handleCall}> CALL (321) 485-8035
+                <a href="tel:+18884380196">
+                    <div className="call-btn" onClick={handleCall}> CALL (888) 438-0196
                     </div>
                 </a>
             </div>
@@ -168,8 +168,7 @@ border-radius: 0px 0px 10px 10px;
             </div> -->
             <!-- <div class="sub-title">We Have Reserved Your Spot</div> -->
             <div class="sub-description">
-                Due to high call volume, your official agent is waiting for only <b>3 minutes</b>, then your spot will
-                not be reserved.
+                Debido al alto volumen de llamadas, tu agente oficial esperará solo <b>3 minutos</b>, luego tu lugar no será reservado.
             </div>
             <div class="timer">
                 <div class="timer-cell" id="minutes">3</div>
@@ -204,7 +203,7 @@ border-radius: 0px 0px 10px 10px;
 
     <script>
         let step = "process";
-        let quizQuestion = "Are you over the age of 64?";
+        let quizQuestion = "1. ¿Tienes Más De 55 Años?";
         const statusDiv = document.getElementById("status");
         const statusMessage = document.getElementById("statusMessage");
         const congratulationsDiv = document.getElementById("congratulations");
@@ -234,8 +233,8 @@ border-radius: 0px 0px 10px 10px;
         }, 3000);
 
         function handleQuizP() {
-            if (quizQuestion === "Are you over the age of 64?") {
-                quizQuestion = "2. Do you live in the United States?";
+            if (quizQuestion === "1. ¿Tienes Más De 55 Años?") {
+                quizQuestion = "2. ¿Vives En Los Estados Unidos?";
                 quizText.textContent = quizQuestion;
                 setYesNoOptions();
                 smoothScrollToTop(1000, 432);
@@ -245,8 +244,8 @@ border-radius: 0px 0px 10px 10px;
         }
 
         function handleQuizN() {
-            if (quizQuestion === "Are you over the age of 64?") {
-                quizQuestion = "2. Do you live in the United States?";
+            if (quizQuestion === "1. ¿Tienes Más De 55 Años?") {
+                quizQuestion = "2. ¿Vives En Los Estados Unidos?";
                 quizText.textContent = quizQuestion;
                 setYesNoOptions();
                 smoothScrollToTop(1000, 632);
@@ -257,7 +256,7 @@ border-radius: 0px 0px 10px 10px;
 
         function setYesNoOptions() {
             answerOptions.innerHTML = `
-                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('yes')">YES</div>
+                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('yes')">SÍ</div>
                 <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('no')">NO</div>
             `;
         }
