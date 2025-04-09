@@ -237,7 +237,7 @@ border-radius: 0px 0px 10px 10px;
         function handleQuizP(ageValue) {
             pushAgeToTags(ageValue);
             if (quizQuestion === "Are you over the age of 64?") {
-                quizQuestion = "2. Do you live in the United States?";
+                quizQuestion = "How much coverage are you looking for?";
                 quizText.textContent = quizQuestion;
                 setYesNoOptions();
                 smoothScrollToTop(1000, 432);
@@ -249,7 +249,7 @@ border-radius: 0px 0px 10px 10px;
         function handleQuizN(ageValue) {
             pushAgeToTags(ageValue);
             if (quizQuestion === "Are you over the age of 64?") {
-                quizQuestion = "2. Do you live in the United States?";
+                quizQuestion = "How much coverage are you looking for?";
                 quizText.textContent = quizQuestion;
                 setYesNoOptions();
                 smoothScrollToTop(1000, 632);
@@ -260,8 +260,10 @@ border-radius: 0px 0px 10px 10px;
 
         function setYesNoOptions() {
             answerOptions.innerHTML = `
-                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('yes')">YES</div>
-                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('no')">NO</div>
+                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('yes','Below-5K')">ABOVE 25K</div>
+                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('no','5K-10K')">10K-25K</div>
+                                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('yes','10K-25K')">5K-10K</div>
+                <div style="border-radius: 20px; font-size: 22px;" class="answer-btn-5" onclick="stepProcess('no','Above-25K')">LESS THAN 5K</div>
             `;
         }
 
@@ -303,10 +305,26 @@ border-radius: 0px 0px 10px 10px;
     }
 }
 
+function pushAgeToTags(coverageValue) {
+    try {
+        console.log("Pushing coverageValue to _rgba_tags:", coverageValue);
+        window._rgba_tags = window._rgba_tags || [];
+        window._rgba_tags.push({ coverage: coverageValue });
+
+       
+        console.log("✅ Successfully pushed. Current _rgba_tags:", JSON.stringify(window._rgba_tags, null, 2));
+    } catch (e) {
+        console.error("❌ Error pushing age to _rgba_tags:", e);
+    }
+}
 
 
 
-        const stepProcess = (answer) => {
+
+
+        const stepProcess = (answer,value) => {
+            console.log("value",value)
+            pushAgeToTags(value);
             smoothScrollToTop(1000);
             const mainContent = document.getElementById("mainContent");
             mainContent.classList.add("hidden");
