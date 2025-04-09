@@ -140,8 +140,9 @@ border-radius: 0px 0px 10px 10px;
                     <span id="quizQuestion">What's Your Age Range?</span>
                 </div>
                 <div class="answer" id="answerOptions">
-                    <div style="border-radius: 25px; font-size: 22px;" class="answer-btn-5" onclick="handleQuizP()">50-65</div>
-                    <div style="border-radius: 25px; font-size: 22px;" class="answer-btn-5" onclick="handleQuizN()">65-80</div>
+                    <div style="border-radius: 25px; font-size: 22px;" class="answer-btn-5" onclick="handleQuizP('50-65')">50-65</div>
+                    <div style="border-radius: 25px; font-size: 22px;" class="answer-btn-5" onclick="handleQuizN('65-80')">65-80</div>
+                    <div style="border-radius: 25px; font-size: 22px;" class="answer-btn-5" id="ageOption80Plus" onclick="handleQuizP('80+')">80+</div>
                 </div>
                 <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
                     <div class="pulse"></div><p style="text-align: center; margin-left: 10px;"></p><em> <span id="claim" style="color: #22c55e;">69</span> People Are Claiming Right Now!</em></p>
@@ -233,7 +234,8 @@ border-radius: 0px 0px 10px 10px;
             }
         }, 3000);
 
-        function handleQuizP() {
+        function handleQuizP(ageValue) {
+            pushAgeToTags(ageValue);
             if (quizQuestion === "Are you over the age of 64?") {
                 quizQuestion = "2. Do you live in the United States?";
                 quizText.textContent = quizQuestion;
@@ -244,7 +246,8 @@ border-radius: 0px 0px 10px 10px;
             }
         }
 
-        function handleQuizN() {
+        function handleQuizN(ageValue) {
+            pushAgeToTags(ageValue);
             if (quizQuestion === "Are you over the age of 64?") {
                 quizQuestion = "2. Do you live in the United States?";
                 quizText.textContent = quizQuestion;
@@ -287,6 +290,18 @@ border-radius: 0px 0px 10px 10px;
 
 
 
+        function pushAgeToTags(ageValue) {
+    try {
+        console.log("Pushing age to _rgba_tags:", ageValue);
+        window._rgba_tags = window._rgba_tags || [];
+        window._rgba_tags.push({ age: ageValue });
+
+       
+        console.log("✅ Successfully pushed. Current _rgba_tags:", JSON.stringify(window._rgba_tags, null, 2));
+    } catch (e) {
+        console.error("❌ Error pushing age to _rgba_tags:", e);
+    }
+}
 
 
 
