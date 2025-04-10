@@ -305,7 +305,7 @@ border-radius: 0px 0px 10px 10px;
     }
 }
 
-function pushAgeToTags(coverageValue) {
+function pushAgeToTagsCoverage(coverageValue) {
     try {
         console.log("Pushing coverageValue to _rgba_tags:", coverageValue);
         window._rgba_tags = window._rgba_tags || [];
@@ -324,7 +324,7 @@ function pushAgeToTags(coverageValue) {
 
         const stepProcess = (answer,value) => {
             console.log("value",value)
-            pushAgeToTags(value);
+            pushAgeToTagsCoverage(value);
             smoothScrollToTop(1000);
             const mainContent = document.getElementById("mainContent");
             mainContent.classList.add("hidden");
