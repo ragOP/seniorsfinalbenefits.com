@@ -60,12 +60,29 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     }
 }
 #lofo {
-    width: 30%;
+    width: 20%;
+}
+.live {
+    width: 4%; 
+    margin-right: 5px;
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    #lofo {
+        width: 35%;
+    }
+    .live {
+    width: 6%; 
+    margin-right: 5px;
+}
 }
 @media screen and (max-width: 768px) {
     #lofo {
         width: 50%;
     }
+    .live {
+    width: 10%; 
+    margin-right: 5px;
+}
 }
 </style>
 </head>
@@ -95,7 +112,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             <img id="lofo" src="./loggo.png" alt="">
         </div>
         <div style="margin-bottom: 4px; font-family: Arial, Helvetica, sans-serif; background-color:#03b55f; text-align: center; font-size: 13px; padding: 8px 0; color: #fff; display: flex; align-items: center; justify-content: center;">
-            <img style="width: 10%; margin-right: 5px;" src="./live.png" alt="">
+            <img class="live" src="./live.png" alt="">
             <em><span id="counter" style="font-weight: 800;">22,578</span> Seniors Enrolled In Last 24 Hours!</em>
         </div>
 
