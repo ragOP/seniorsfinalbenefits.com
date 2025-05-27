@@ -21,6 +21,11 @@
     
       },
       {
+        "source": "/sp",
+        "destination": "/spanish.html"
+    
+      },
+      {
         "source": "/engchat25k",
         "destination": "/engchat25k.html"
     
